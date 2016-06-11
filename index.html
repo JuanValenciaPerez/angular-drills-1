@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="App">
+  <head>
+    <meta charset="utf-8">
+    <title>angular drills</title>
+  </head>
+  <body ng-controller="MainCtrl">
+
+    <h1>Angular Drills Project</h1>
+
+    <!-- ------------- 1.Step ------------------- -->
+
+    <input type="text" ng-model="text">
+
+    <p>{{text}}</p>
+
+    <!-- ------------- 3.Step ------------------- -->
+
+    <input type="text" placeholder="Search for quotes" ng-model="filter">
+
+    <!-- ------------- 2.Step ------------------- -->
+
+    <ul>
+      <li ng-repeat="quote in quotes | filter: filter">{{quote['text']}} | {{quote['author']}}</li>
+    </ul>
+
+    <!-- ------------- 4.Step ------------------- -->
+
+    <p>
+      {{errorMessage}}
+    </p>
+
+    <p>
+      {{city}}
+    </p>
+
+    <!-- ------------- 5.Step ------------------- -->
+
+    <p>
+      Current temperature: {{weather}} in {{city}}
+    </p>
+
+    <!-- Angular Core Library -->
+    <script src="https://code.angularjs.org/1.5.6/angular.js"></script>
+    <!-- Angular Module -->
+    <script src="app/app.js"></script>
+    <!-- Angular Controllers -->
+    <script src="app/controllers/mainCtrl.js"></script>
+    <!-- Angular Services -->
+    <script src="app/services/mainService.js"></script>
+    <script src="app/services/locationService.js"></script>
+    <script src="app/services/weatherService.js"></script>
+  </body>
+</html>
